@@ -1,0 +1,13 @@
+[user]
+	name = haodance
+	email = cax743100@gmail.com
+[core]
+	pager = cat
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[alias]
+    l = log --oneline --graph --decorate
+    la = log --oneline --graph --decorate --all
