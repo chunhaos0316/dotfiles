@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/hao_dance/.oh-my-zsh"
+export ZSH="/home/haodance/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,8 +109,8 @@ alias rmf='/bin/rm'
 alias rmdir='trash'
 alias rmdirf='/bin/rmdir'
 alias ctags='/usr/local/bin/ctags'
-alias ls='ls -aGF'
-alias ll='ls -aGl'
+alias ls='ls -aF --color=auto'
+alias ll='ls -al --color=auto'
 
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
