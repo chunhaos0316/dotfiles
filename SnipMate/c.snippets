@@ -1,0 +1,21 @@
+snippet c
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int main(int argc, char* argv[]){
+		${1}
+
+		return 0;
+	}
+
+snippet printf
+	printf("${1}\n");
+
+
+snippet scanf
+	scanf("${1}", ${2});
+
+	#include ${1}
+
+snippet in
+	#include ${1}
