@@ -9,5 +9,7 @@
 	required = true
 	clean = git-lfs clean -- %f
 [alias]
-    l = log --oneline --graph --decorate
-    la = log --oneline --graph --decorate --all
+    l = log --oneline --graph --decorate --color=always
+    la = log --oneline --graph --decorate --all --color=always
+    d = diff --color=always
+    dn = diff --name-only --color=always

@@ -1,9 +1,9 @@
 snippet c
 	#include <stdio.h>
 	#include <stdlib.h>
-
+	${1}
 	int main(int argc, char* argv[]){
-		${1}
+		${2}
 
 		return 0;
 	}
@@ -11,11 +11,11 @@ snippet c
 snippet printf
 	printf("${1}\n");
 
-
 snippet scanf
 	scanf("${1}", ${2});
 
-	#include ${1}
-
 snippet in
 	#include ${1}
+
+snippet de
+	#define ${1}
