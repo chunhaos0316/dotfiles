@@ -3,6 +3,7 @@
 	email = cax743100@gmail.com
 [core]
 	pager = cat
+	editor = vim
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
