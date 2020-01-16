@@ -135,6 +135,7 @@ set clipboard=unnamed
 
 
 "color configuration"
+"list 250 colors --> curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
 hi Type cterm=bold ctermfg=195
 hi Normal ctermfg=249 ctermbg=233
 hi String ctermfg=077
