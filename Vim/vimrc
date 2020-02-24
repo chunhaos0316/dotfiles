@@ -156,6 +156,10 @@ hi CursorLineNr cterm=bold ctermfg=226
 hi StorageClass ctermfg=229
 hi link Structure StorageClass
 
+hi DiffChange ctermfg=156 ctermbg=18
+hi DiffText cterm=none ctermfg=15 ctermbg=25
+hi DiffAdd cterm=none ctermfg=15 ctermbg=25
+hi DiffDelete cterm=none ctermfg=15 ctermbg=25
 
 
 "status line"

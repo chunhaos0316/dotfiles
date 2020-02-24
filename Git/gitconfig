@@ -3,13 +3,17 @@
 	email = cax743100@gmail.com
 [core]
 	pager = cat
+    editor = vim
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
 [alias]
     l = log --oneline --graph --decorate --color=always
     la = log --oneline --graph --decorate --all --color=always
-    d = diff --color=always
-    dn = diff --name-only --color=always
+    d = difftool
