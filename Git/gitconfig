@@ -9,6 +9,13 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+    trustExitCode = true
 [alias]
     l = log --oneline --graph --decorate --color=always
     la = log --oneline --graph --decorate --all --color=always
+    d = difftool
+    dn = difftool --name-only
