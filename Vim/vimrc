@@ -128,6 +128,10 @@ autocmd FileType make setlocal noexpandtab shiftwidth=8 tabstop=8
 "if +clipboard, then it supports"
 set clipboard=unnamed
 
+"set for vim installed from homebrew
+set backspace=2
+
+
 
 
 "vim-plug"
