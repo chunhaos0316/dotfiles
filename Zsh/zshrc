@@ -1,8 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$PATH
+OS=$(uname -s)
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/hao_dance/.oh-my-zsh"
+if [ "$OS" = "Linux" ]; then
+    export ZSH="/home/$(whoami)/.oh-my-zsh"
+else
+    export ZSH="/Users/$(whoami)/.oh-my-zsh"
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,8 +114,13 @@ alias rmf='/bin/rm'
 alias rmdir='trash'
 alias rmdirf='/bin/rmdir'
 alias ctags='/usr/local/bin/ctags'
-alias ls='ls -aGF'
-alias ll='ls -aGl'
+if [ "$OS" = "Linux" ]; then
+    alias ls='ls -aF --color=auto'
+    alias ll='ls -al --color=auto'
+else
+    alias ls='ls -aFG'
+    alias ll='ls -alG'
+fi
 
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.

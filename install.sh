@@ -1,22 +1,60 @@
 #!/usr/bin/env bash
 
-installHomebrew(){
+setEnvVar() {
+    OS=$(uname -s)
+    if [ "$OS" == "Linux" ]; then
+        PKG_UPDATE="sudo apt-get update"
+        PKG_INSTALL="sudo apt-get install"
+    else
+        PKG_UPDATE="brew update"
+        PKG_INSTALL="brew install"
+    fi
+
+    PIP_INSTALL="pip3 install"
+}
+
+
+installHomebrew() {
     echo Installing \"Homebrew\" ...
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
-setGit(){
+installRequirements() {
+    if [ "$OS" != "Linux" ]; then
+        installHomebrew
+    fi
+
+    $PKG_UPDATE
+    $PKG_INSTALL git zsh tmux cscope ctags cppcheck clang-format gnuplot aspell trash-cli
+
+    if [ "$OS" == "Linux" ]; then
+        $PKG_INSTALL build-essential vim-gnome python3-pip valgrind curl wget
+        $PIP_INSTALL youtube-dl
+    else
+        $PKG_INSTALL python3 vim youtube-dl
+    fi
+}
+
+init() {
+    echo "set completion-ignore-case on" >> ~/.inputrc
+    sudo timedatectl set-local-rtc 1 --adjust-system-clock
+
+    setEnvVar
+    installRequirements
+}
+
+setGit() {
     echo Setting \".gitconfig\" ...
     ln -fs `pwd`/Git/gitconfig ~/.gitconfig
 }
 
-setVim(){
-    echo Setting \".vimrc\" ...
+setVim() {
+    echo "Setting \".vimrc\" ..."
     ln -fs `pwd`/Vim/vimrc ~/.vimrc
-    echo
 
-    echo Installing vundle ...
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    echo -e "\nInstalling vundle ..."
+    #git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
     echo Setting \"snipmate\" ...
@@ -26,35 +64,63 @@ setVim(){
     done
 }
 
-setTmux(){
+setTmux() {
     echo Setting \".tmux.conf\" ...
     ln -fs `pwd`/Tmux/tmux.conf ~/.tmux.conf
 }
 
-setZsh(){
-    echo Setting \".zshrc\" ...
+setZsh() {
+    echo -e "Switch shell to zsh ..."
+    chsh -s /usr/bin/zsh
+
+    echo -e "\n Installing oh-my-zsh ..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    
+    echo -e "\n Installing powerlevel9k ..."
+    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+    echo -e "\n Installing Nerd-Fonts ..."
+    git clone https://github.com/ryanoasis/nerd-fonts.git ~/.fonts/nerd-fonts/
+    ~/.fonts/nerd-fonts/install.sh
+
+    echo -e "\nSetting \".zshrc\" ..."
     ln -fs `pwd`/Zsh/zshrc ~/.zshrc
+    source ~/.zshrc
 }
 
-until [ "$SETTING_TARGET" == "q" ]
+
+while true
 do
-    echo "Select the dotfiles to be set."
-    echo "1) All (including git, vim, tmux, zsh)"
+    echo "Select the Configuration below:"
+    echo "1) All settings"
     echo "2) Git"
     echo "3) Vim"
     echo "4) Tmux"
     echo "5) Zsh"
-    echo "6) Homebrew"
-    echo "(Enter or type q to quit)"
+    echo -e "(Enter or type \"quit\" to exit)\n"
+
+    read -p "Setting target: " SELECTION
+    SELECTION=${SELECTION:-"q"}
     echo
 
-    read -p "Setting target: " SETTING_TARGET
-    SETTING_TARGET=${SETTING_TARGET:-"q"}
-    echo
+    case $SELECTION in
+        "q" | "qu" | "qui" | "quit")
+            break
+    esac
 
-    case $SETTING_TARGET in
+    echo "Install Requirements? Y/[N]"
+    read INITIALIZE
+    INITIALIZE=${INITIALIZE:-"N"}
+    if [ "$INITIALIZED" == "Y" ] || [ "$INITIALIZED" == "YES" ]; then
+        REQUIREMENTS_INSTALLED="N"
+        echo "First, installing requirements ..."
+        init
+    fi
+
+    case $SELECTION in
         "1")
-            installHomebrew; setGit; setVim; setTmux; setZsh
+            setGit; setVim; setTmux; setZsh
+            break
             ;;
         "2")
             setGit
@@ -68,10 +134,8 @@ do
         "5")
             setZsh
             ;;
-        "6")
-            installHomebrew
-            ;;
-        "q")
+        "q" | "qu" | "qui" | "quit")
+            break;
             ;;
         *)
             echo "Invalid Operation!!"

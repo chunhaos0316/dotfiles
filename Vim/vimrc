@@ -181,7 +181,7 @@ hi DiffDelete cterm=none ctermfg=15 ctermbg=25
 "cscope & ctags settings
 set cscopetag " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
 set csto=0
-set tags=./tags,../tags
+"set tags=./tags,../tags
 
 " add any cscope database in current directory
 if filereadable("cscope.out")
@@ -228,11 +228,11 @@ nmap <C-\><C-\>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 " update cscope automatically
 fun! AutoUpdateCscopeAndCtags()
   let UpdateCscopeDB = 'cscope -Rbqk'
-  let UpdateCtagsDB = 'ctags -R'
+  "let UpdateCtagsDB = 'ctags -R'
   let Res = system(UpdateCscopeDB)
-  let Res = system(UpdateCtagsDB)
+  "let Res = system(UpdateCtagsDB)
   unlet UpdateCscopeDB
-  unlet UpdateCtagsDB
+  "unlet UpdateCtagsDB
   unlet Res
   exe "cs reset"
 endfun
