@@ -5,21 +5,23 @@ filetype off "required
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-Plugin 'gmarik/vundle'                      "vundle
+Plugin 'VundleVim/Vundle.vim'               "Vundle
 
 Plugin 'scrooloose/nerdtree'                "Nerdtree
 
 Plugin 'wesleyche/SrcExpl'                  "SrcExpl
 
-Plugin 'taglist.vim'                        "taglist
+Plugin 'taglist.vim'                        "Taglist
 
-Plugin 'wesleyche/Trinity'                  "trinity
+"Plugin 'wesleyche/Trinity'                  "Trinity
 
 Plugin 'MarcWeber/vim-addon-mw-utils'       "snipmate
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
-Plugin 'peterhoeg/vim-qml'
+Plugin 'peterhoeg/vim-qml'                  "qml color syntax
+
+Plugin 'airblade/vim-gitgutter'             "Git-gutter
 
 call vundle#end()            " required
 
@@ -69,6 +71,9 @@ set encoding=utf-8
 
 "not display the coordinate"
 set noruler
+
+"highlight the search targets"
+set hlsearch
 
 "ignore the capital or lowercase when searching"
 set ignorecase
