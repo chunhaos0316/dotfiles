@@ -119,6 +119,9 @@ set t_Co=256
 "cursorline"
 set cursorline
 
+"sign-column for git-gutter"
+set signcolumn=yes
+
 " key mapping
 inoremap {<CR> {<CR>}<Esc>ko
 
@@ -164,6 +167,7 @@ hi CursorLine cterm=none ctermbg=235
 hi CursorLineNr cterm=bold ctermfg=226
 hi StorageClass ctermfg=229
 hi link Structure StorageClass
+hi SignColumn ctermbg=236
 
 hi DiffChange ctermfg=156 ctermbg=18
 hi DiffText cterm=none ctermfg=15 ctermbg=25
