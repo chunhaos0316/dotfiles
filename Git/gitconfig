@@ -2,7 +2,7 @@
 	name = haodance
 	email = cax743100@gmail.com
 [core]
-	pager = cat
+    #pager = cat
     editor = vim
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
@@ -19,3 +19,5 @@
     la = log --oneline --graph --decorate --all --color=always
     d = difftool
     dn = difftool --name-only
+    su = status -uno
+    s = status

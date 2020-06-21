@@ -124,6 +124,7 @@ set signcolumn=yes
 
 " key mapping
 inoremap {<CR> {<CR>}<Esc>ko
+nmap <F6> :noh<CR>
 
 "recognize the filetype"
 filetype indent on
