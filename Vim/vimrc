@@ -82,6 +82,10 @@ set smartcase
 "set autoindent"
 set autoindent
 
+"set code folding
+set foldmethod=manual
+set nofoldenable
+
 "set the tab"
 set expandtab
 set tabstop=4
