@@ -157,10 +157,10 @@ set backspace=2
 "list 250 colors --> curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
 hi Type cterm=bold ctermfg=195
 hi Normal ctermfg=249 ctermbg=233
-hi String ctermfg=077
+hi String ctermfg=77
 hi Comment ctermfg=117
 hi PreProc ctermfg=220
-hi Statement cterm=bold ctermfg=039
+hi Statement cterm=bold ctermfg=39
 
 hi Number ctermfg=185
 hi link Float Number
@@ -179,6 +179,8 @@ hi DiffText cterm=none ctermfg=15 ctermbg=25
 hi DiffAdd cterm=none ctermfg=15 ctermbg=25
 hi DiffDelete cterm=none ctermfg=15 ctermbg=25
 
+hi cCustomFunc ctermfg=159
+hi cCustomClass ctermfg=147
 
 "status line"
  set statusline=
