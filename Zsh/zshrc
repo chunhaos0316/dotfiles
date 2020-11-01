@@ -1,11 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH:/usr/local/sbin
 OS=$(uname -s)
 
 # Path to your oh-my-zsh installation.
 if [ "$OS" = "Linux" ]; then
     export ZSH="/home/$(whoami)/.oh-my-zsh"
-else
+elif [ "$OS" = "Darwin" ]; then
     export ZSH="/Users/$(whoami)/.oh-my-zsh"
 fi
 
@@ -117,7 +117,7 @@ alias ctags='/usr/local/bin/ctags'
 if [ "$OS" = "Linux" ]; then
     alias ls='ls -aF --color=auto'
     alias ll='ls -al --color=auto'
-else
+elif [ "$OS" = "Darwin" ]; then
     alias ls='ls -aFG'
     alias ll='ls -alG'
 fi
