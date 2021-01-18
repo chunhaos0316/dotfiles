@@ -58,6 +58,8 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_WinWidth=25
 set ut=100
 
+"SnipMate
+let g:snipMate = { 'snippet_version' : 1 }
 
 
 "show the syntax color"
