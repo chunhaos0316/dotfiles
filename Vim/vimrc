@@ -23,6 +23,11 @@ Plugin 'peterhoeg/vim-qml'                  "qml color syntax
 
 Plugin 'airblade/vim-gitgutter'             "Git-gutter
 
+Plugin 'vim-airline/vim-airline'            "airline
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'tpope/vim-fugitive'                 "fugitive
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -185,14 +190,14 @@ hi cCustomFunc ctermfg=159
 hi cCustomClass ctermfg=147
 
 "status line"
- set statusline=
- set statusline+=%2*\ %<%F\                                " File+path
- set statusline+=%3*\ %=\ %{''.(&fenc!=''?&fenc:&enc).''}\ " Encoding
- set statusline+=%6*\ %5l,%3c\                             " RowColnumber
- hi User2 ctermfg=15  ctermbg=237
- hi User3 ctermfg=15  ctermbg=237
- hi User6 ctermfg=0  ctermbg=32
- set laststatus=2
+" set statusline=
+" set statusline+=%2*\ %<%F\                                " File+path
+" set statusline+=%3*\ %=\ %{''.(&fenc!=''?&fenc:&enc).''}\ " Encoding
+" set statusline+=%6*\ %5l,%3c\                             " RowColnumber
+" hi User2 ctermfg=15  ctermbg=237
+" hi User3 ctermfg=15  ctermbg=237
+" hi User6 ctermfg=0  ctermbg=32
+" set laststatus=2
 
 
 
