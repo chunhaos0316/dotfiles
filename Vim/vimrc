@@ -19,7 +19,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'       "snipmate
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
-Plugin 'peterhoeg/vim-qml'                  "qml color syntax
+Plugin 'peterhoeg/vim-qml'                  "qml, syntax color
 
 Plugin 'airblade/vim-gitgutter'             "Git-gutter
 
@@ -27,6 +27,8 @@ Plugin 'vim-airline/vim-airline'            "airline
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'tpope/vim-fugitive'                 "fugitive
+
+Plugin 'osyo-manga/vim-anzu'                "anzu, counting of search
 
 call vundle#end()            " required
 
@@ -81,6 +83,9 @@ set noruler
 
 "highlight the search targets"
 set hlsearch
+
+"show counts of search
+set shortmess-=S
 
 "ignore the capital or lowercase when searching"
 set ignorecase
