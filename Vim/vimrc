@@ -30,6 +30,8 @@ Plugin 'tpope/vim-fugitive'                 "fugitive
 
 Plugin 'osyo-manga/vim-anzu'                "anzu, counting of search
 
+Plugin 'Yggdroot/indentLine'                "indent guide line
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -137,6 +139,9 @@ set cursorline
 
 "sign-column for git-gutter"
 set signcolumn=yes
+
+"indent guide line for tabs
+set list lcs=tab:\¦\ 
 
 " key mapping
 inoremap {<CR> {<CR>}<Esc>ko
