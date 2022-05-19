@@ -7,7 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'               "Vundle
 
-Plugin 'scrooloose/nerdtree'                "Nerdtree
+Plugin 'preservim/nerdtree'                 "Nerdtree
 
 Plugin 'wesleyche/SrcExpl'                  "SrcExpl
 
@@ -184,9 +184,9 @@ hi link Float Number
 hi Boolean ctermfg=105
 hi Character ctermfg=231
 
-hi LineNr ctermfg=122
+hi LineNr ctermfg=111
 hi CursorLine cterm=none ctermbg=235
-hi CursorLineNr cterm=bold ctermfg=226
+hi CursorLineNr cterm=bold ctermfg=225
 hi StorageClass ctermfg=229
 hi link Structure StorageClass
 hi SignColumn ctermbg=236
