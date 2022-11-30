@@ -37,13 +37,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
-"plugin shortcut"
-nmap <F7> :NERDTreeToggle<CR>
-nmap <F8> :TlistToggle<CR>
-nmap <F9> :SrcExplToggle<CR><CR>
-nmap <F10> :TrinityToggleAll<CR>
-
-
 "nerdtree
 let NERDTreeWinPos=1
 let g:NERDTreeWinSize=25
@@ -70,6 +63,18 @@ set ut=100
 "SnipMate
 let g:snipMate = { 'snippet_version' : 1 }
 
+
+"plugin shortcut
+nmap <F5> :TrinityToggleAll<CR>
+nmap <F6> :SrcExplToggle<CR><CR>
+nmap <F7> :NERDTreeToggle<CR>
+nmap <F8> :TlistToggle<CR>
+
+"for binary file
+nmap <F1> :%! xxd<CR>
+"other shortcut
+nmap <F2> :noh<CR>
+nmap <F4> :Git blame<CR>
 
 "show the syntax color"
 syntax enable
@@ -145,7 +150,6 @@ set list lcs=tab:\¦\
 
 " key mapping
 inoremap {<CR> {<CR>}<Esc>ko
-nmap <F6> :noh<CR>
 
 "recognize the filetype"
 filetype indent on
