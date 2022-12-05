@@ -65,16 +65,17 @@ let g:snipMate = { 'snippet_version' : 1 }
 
 
 "plugin shortcut
-nmap <F5> :TrinityToggleAll<CR>
 nmap <F6> :SrcExplToggle<CR><CR>
 nmap <F7> :NERDTreeToggle<CR>
 nmap <F8> :TlistToggle<CR>
+nmap <F9> :TrinityToggleAll<CR>
 
 "for binary file
 nmap <F1> :%! xxd<CR>
 "other shortcut
 nmap <F2> :noh<CR>
 nmap <F4> :Git blame<CR>
+nmap <F5> :e<CR>
 
 "show the syntax color"
 syntax enable
