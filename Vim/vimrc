@@ -75,7 +75,7 @@ nmap <F1> :%! xxd<CR>
 "other shortcut
 nmap <F2> :noh<CR>
 nmap <F4> :Git blame<CR>
-nmap <F5> :e<CR>
+nmap <F5> :e<CR>:call AutoUpdateCscopeAndCtags()<CR><CR>
 
 "show the syntax color"
 syntax enable
@@ -203,6 +203,11 @@ hi DiffDelete cterm=none ctermfg=15 ctermbg=25
 
 hi cCustomFunc ctermfg=159
 hi cCustomClass ctermfg=147
+
+
+hi ModeMsg cterm=bold ctermfg=221
+"hi WarningMsg ctermfg=121
+"hi MoreMsg ctermfg=121
 
 "status line"
 " set statusline=
